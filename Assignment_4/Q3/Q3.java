@@ -1,6 +1,5 @@
 package Assignment_4.Q3;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Q3 {
@@ -14,8 +13,19 @@ public class Q3 {
             arr[i] = sc.nextInt();
         }
         // Ascending Order
-        Arrays.sort(arr);
-        System.out.println("\nNumbers in Ascending Order: " + Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println("\nNumbers in Ascending Order: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i] + " ");
+        }
 
         // Summation of two rows
         int sum = 0;
@@ -43,7 +53,6 @@ public class Q3 {
             System.out.println("Number not found in the array.");
         }
 
-        System.out.println("\nPrime numbers in the array:");
         for (int i = 0; i < arr.length; i++) {
             int num = arr[i];
             boolean isPrime = true;
